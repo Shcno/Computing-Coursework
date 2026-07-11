@@ -1,0 +1,16 @@
+<?php
+    #Setting the variables used for connecting the database
+    $servername="localhost";
+    $username="root";
+    $password="password";
+    $dbname="Trading";
+    try{
+        $conn=new PDO("mysql:host=$servername;dbname=$dbname",$username,$password);
+        $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+        echo("connected ok");
+    }
+    catch (PDOException $e)
+    {
+        echo("connection failed " .$e->getMessage()."<br>");
+    }
+?>
