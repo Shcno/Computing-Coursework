@@ -1,7 +1,7 @@
 <?php
     $servername="localhost";
     $username="root";
-    $password="password";
+    $password="root";
 
     $conn=new PDO("mysql:host=$servername",$username,$password);
     $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
@@ -11,6 +11,7 @@
     $conn->exec($sql);
     echo("DB made"); 
     
+
     $stmt1= $conn->prepare("DROP TABLE IF EXISTS tblusers;
     CREATE TABLE tblusers
     (UserID INT(4) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -21,6 +22,35 @@
     Funds DECIMAL (15,2) NOT NULL);
     ");
     $stmt1->execute();
+
+    
+    $stmt2= $conn->prepare("DROP TABLE IF EXISTS tblusershares;
+    CREATE TABLE tbluserShares
+    (UserID INT(4) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    UserID VARCHAR(20) NOT NULL,
+    ShareID VARCHAR(20) NOT NULL,
+    PriceBought DECIMAL (15,2) NOT NULL,
+    TradeID VARCHAR(20) NOT NULL,
+    Quantity VARCHAR(20) NOT NULL,
+    Sold BOOLEAN NOT NULL,
+    DateSold DATE NOT NULL,
+    PriceSold DECIMAL(15,2) NOT NULL,
+    DateBought DATE NOT NULL)
+    ");
+    $stmt2->execute();
+
+
+    $stmt3= $conn->prepare("DROP TABLE IF EXISTS tbl")
+
+
+
+
+
+
+
+
+
+
 
 
     //add in some default data
@@ -36,4 +66,4 @@
     $stmt1->bindParam(":Password",$hashedpassword);
     
     $stmt1->execute(); */
-    ?>
+?>

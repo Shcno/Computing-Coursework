@@ -1,0 +1,24 @@
+Pages:
+    -
+
+
+
+
+
+Undocumented Pages:
+    -admin.php
+    -connection.php
+    -index.php
+    -install.php
+    -loggedoutindex.php
+    -login.php
+    -navbar.php
+
+Documented Pages:
+    -
+
+
+
+Pages to Make:
+    -???
+    -
